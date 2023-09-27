@@ -15,15 +15,30 @@
     </div>
     <script>
         window.onload = function () {
-            //Input data
+            function paintView (page) {
+                let view = ""
+                let start = (page-1)*20+1
+                let end = (page)*20
+
+                for(let i=start;i<=end;i++) {
+                    view += " "+i
+                }
+
+                document.getElementById("viewDiv").innerText=view
+            }
+
             let list = []
             let total_count = 1000
 
             for(let i=0;i<total_count;i++) {
                 list.push(i)
             }
+            paintView (1)
 
             let paging = new JH_paging(document.getElementById("pagingList"),1,list.length/20)
+            paging.clickFunction = function (number) {
+                paintView(number)
+            }
         }
     </script>
 </body>

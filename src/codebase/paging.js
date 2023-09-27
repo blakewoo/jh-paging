@@ -44,7 +44,7 @@ const JH_paging = (function () {
             })
             tempLabel.innerText = index
             if(currentCount === index) {
-                tempLabel.style.fontWeight = "bold"
+                tempLabel.style.textDecoration = "underline"
             }
             tempLabel.style.marginRight = "5px"
             tempLabel.style.marginLeft = "5px"
@@ -77,6 +77,11 @@ const JH_paging = (function () {
         let rawNumber = event.currentTarget.id
         this.CURRENT_COUNT = Number(rawNumber.split("-")[1])
         this.paint()
+        this.clickFunction(this.CURRENT_COUNT)
+    }
+
+    JH_paging.prototype.clickFunction = function (event) {
+
     }
 
     return JH_paging
