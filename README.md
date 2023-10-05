@@ -27,7 +27,7 @@ To create the object for the event where you want the pagination to appear, impo
 ```javascript
     let paging = new JH_paging(CONTAINER_DOCUMNET,CURRENT_PAGE,TOTAL_PAGE)
     paging.clickFunction = function (number) {
-        // Call view paint function
+        // Do what ever you want
     }
 
 ```
